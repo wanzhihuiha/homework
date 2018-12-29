@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>上传文件</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+    <script>
+        window.onload = function () {
+            $.ajax({
+                type: "post",
+                url: "/demo/sqldata",
+                data:{},
+                dataType: "json",
+                success: function (data) {
+                    showData(data);//仅做数据展示
+                },
+            })
+        }
+
+        function showData(data) {
+            var str = "";//定义用于拼接的字符串
+            for (var i = 0; i < data.length; i++) {
+                //拼接表格的行和列
+                var str1=data[i];
+                var str2="查看报告"
+                if(data[i].reportpath==undefined || data[i].reportpath=="" || data[i].reportpath==null)
+                {str2=""}
+                str = "<tr><td>" + data[i].testname+ "</td><td><a href='run3?PAT="+data[i].testname+"' target=\"_blank\">运行</a></td>" +
+                    "<td><a href='report?name="+data[i].testname+"' target=\\\"_blank\\\">"+str2+"</a></td></tr>";
+                //追加到table中
+                $("#tab").append(str);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<p>请选择脚本</p>
+<form action="upload" method="POST" enctype="multipart/form-data">
+    文件：<input type="file" name="file"/>
+    <input type="submit"/>
+</form>
+<table id="tab">
+    <tr>
+        <th>用例名字</th><th>是否运行</th><th>报告</th>
+    </tr>
+</table>
+</body>
+</html>

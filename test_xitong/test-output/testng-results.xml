@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="80" started-at="2018-12-25T10:18:06 CST" finished-at="2018-12-25T10:18:06 CST">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="80" started-at="2018-12-25T10:18:06 CST" finished-at="2018-12-25T10:18:06 CST">
+      <class name="text1">
+        <test-method status="PASS" signature="CodeText()[pri:0, instance:text1@510f3d34]" name="CodeText" duration-ms="10" started-at="2018-12-25T10:18:06 CST" finished-at="2018-12-25T10:18:06 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CodeText -->
+        <test-method status="PASS" signature="CodeText()[pri:0, instance:text1@510f3d34]" name="CodeText" duration-ms="0" started-at="2018-12-25T10:18:06 CST" finished-at="2018-12-25T10:18:06 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CodeText -->
+        <test-method status="PASS" signature="CodeText()[pri:0, instance:text1@510f3d34]" name="CodeText" duration-ms="0" started-at="2018-12-25T10:18:06 CST" finished-at="2018-12-25T10:18:06 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CodeText -->
+      </class> <!-- text1 -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

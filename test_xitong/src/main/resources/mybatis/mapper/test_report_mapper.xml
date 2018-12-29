@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Mapper.test_report_mapper">
+
+    <resultMap type="com.example.demo.Model.test_report" id="gettest_reportMap">
+        <id column="id" property="id" />
+        <result column="testname" property="testname" />
+        <result column="reportpath" property="reportpath" />
+    </resultMap>
+
+    <!--查找数据库用来首页显示-->
+    <select id="gettest_report" resultType="com.example.demo.Model.test_report" resultMap="gettest_reportMap">
+        select * from report
+    </select>
+
+    <!--根据ID查找报告路径-->
+    <select id="get_id" resultType="com.example.demo.Model.test_report" resultMap="gettest_reportMap">
+        select reportpath from report where id=#{0}
+    </select>
+
+    <!--把上传的文件写入数据库-->
+    <insert id="new_insert_report" parameterType="com.example.demo.Model.test_report" useGeneratedKeys="true" keyProperty="id">
+        insert into report(testname) values(#{testname})
+    </insert>
+
+    <!---->
+    <insert id="insert_report" parameterType="com.example.demo.Model.test_report" useGeneratedKeys="true" keyProperty="id">
+        insert into report(testname,reportpath) values(#{testname}, #{reportpath})
+    </insert>
+
+    <!--更新数据库对应的测试的报告地址-->
+    <update id="updata_report" parameterType="com.example.demo.Model.test_report">
+        update report set reportpath=#{reportpath} where testname=#{testname}
+    </update>
+
+</mapper>
