@@ -93,7 +93,7 @@
             <!--testng的依赖-->
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.10</version>
+            <version>7.7.0</version>
             <!--<scope>test</scope>-->
         </dependency>
 
@@ -106,7 +106,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>RELEASE</version>
+            <version>7.7.0</version>
             <scope>compile</scope>
         </dependency>
 
